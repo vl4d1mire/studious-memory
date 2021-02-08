@@ -1,0 +1,25 @@
+{
+  "name": "update-plugin",
+  "version": "1.0.0",
+  "description": "pure js plugin",
+  "main": "index.js",
+  "scripts": {
+    "serve": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vl4d1mire/studious-memory.git"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "Vladimir Egorov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vl4d1mire/studious-memory/issues"
+  },
+  "homepage": "https://github.com/vl4d1mire/studious-memory#readme",
+  "dependencies": {
+    "parcel": "^1.12.4"
+  }
+}
