@@ -19,9 +19,13 @@ function bytesToSize(bytes) {
     return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
 }
 
+function noop() {}
+
 export function upload(selector, options = {}) {
 
     let files = []
+
+    const onUpload = options.onUpload ?? noop
     const input = document.querySelector(selector)
     const open = element('button', ['btn'], 'Открыть')
     const upload = element('button', ['btn', 'primary'], 'Загрузить')
@@ -94,6 +98,7 @@ export function upload(selector, options = {}) {
     }
 
     const clearPreview = (el) => {
+        el.style.bottom = '4px'
         el.innerHTML = `<div class="preview-info-progress"></div>`
     }
 
@@ -101,6 +106,7 @@ export function upload(selector, options = {}) {
         preview.querySelectorAll('.preview-remove').forEach(e => e.remove())
         const previewInfo = preview.querySelectorAll('.preview-info')
         previewInfo.forEach(clearPreview)
+        onUpload(files, previewInfo)
     }
 
     open.addEventListener('click', triggerInput)
