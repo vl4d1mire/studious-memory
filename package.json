@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/vl4d1mire/studious-memory#readme",
   "dependencies": {
+    "firebase": "^8.2.6",
     "parcel": "^1.12.4"
   }
 }
